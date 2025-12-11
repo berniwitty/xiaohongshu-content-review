@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# PyTorch
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# 大文件 - 模型权重
+models/
+*.ckpt
+checkpoint-*/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+wandb/
+runs/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 敏感信息
+.env
+*.key
