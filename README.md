@@ -36,7 +36,8 @@
 <details>
 <summary>📸 查看Demo截图</summary>
 
-![Demo界面](assets/demo_screenshot.png)
+![Demo界面1](assets/demo_screenshot1.png)
+![Demo界面1](assets/demo_screenshot2.png)
 
 </details>
 
@@ -215,42 +216,6 @@ llamafactory-cli train configs/train_sft.yaml
 llamafactory-cli export configs/export_sft.yaml
 ```
 
-## 🎤 面试要点
-
-<details>
-<summary>点击展开面试问答</summary>
-
-### Q1: 为什么选择SFT而不是DPO？
-
-A: SFT适合任务明确、数据可控的场景。内容审核任务有明确的判断标准，SFT可以让模型学会审核格式和判断逻辑。DPO需要高质量的偏好对数据，如果数据质量不够反而会损害效果。
-
-### Q2: LoRA的原理是什么？
-
-A: LoRA通过低秩分解，在原始权重矩阵旁边添加两个小矩阵 A 和 B（rank << hidden_size）。训练时只更新 A 和 B，推理时合并回原矩阵。好处是参数量小（本项目只训练1.7%参数）、显存占用低、可以多任务复用。
-
-### Q3: 如何评估模型效果？
-
-A: 
-1. **定量评估**：准确率、召回率、F1-score
-2. **定性评估**：人工抽检，检查边界case
-3. **A/B测试**：与规则系统对比
-
-### Q4: 如何处理badcase？
-
-A: 
-1. 收集badcase加入训练集
-2. 分析badcase分布，针对性补充数据
-3. 迭代微调，持续优化
-
-### Q5: 生产环境如何部署？
-
-A:
-1. **推理加速**：vLLM、TensorRT-LLM
-2. **量化压缩**：INT8/INT4量化
-3. **服务化**：FastAPI + Docker
-4. **监控**：请求日志、效果监控
-
-</details>
 
 ## 📊 数据集说明
 
@@ -265,10 +230,6 @@ A:
 | 正常内容 | ~350 | 日常分享、真实体验 |
 
 数据来源：参考小红书官方社区规范手工构造，覆盖常见违规场景。
-
-## 📄 License
-
-MIT License
 
 ## 🙏 致谢
 
